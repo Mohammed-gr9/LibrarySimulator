@@ -1,4 +1,11 @@
-public class Member{
+class Member{
+
+  
+//https://github.com/Mohammed-gr9/LibrarySimulator.git
+
+// Name:محمد سفر الغامدي
+// ID: 446104699
+
     // Instance variables: Unique to each member object
     private int id;
     private String name;
@@ -12,15 +19,15 @@ public class Member{
     static int TotalViewBorrowed=0;
     static int TotalBorrows=0;
     static int TotalReturns=0;
-    int getId(){
+    public int getId(){
          return id;
     }
 
-    String getName(){
+    public String getName(){
          return name;
     }
 
-    int getnumViewBorrowed(){
+    public int getnumViewBorrowed(){
          return numViewBorrowed;
     }
       // Constructor to initialize a new member with ID, name, and current borrowed count
