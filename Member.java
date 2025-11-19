@@ -1,11 +1,13 @@
 public class Member{
+    // Instance variables: Unique to each member object
     private int id;
     private String name;
     private int borrowedCount ;
-    private int numViewBorrowed = 0;
+    private int numViewBorrowed;
     private int numBorrows = 0;
     private int numReturns = 0;
     private double sessionFees = 0.0 ;
+    // Static variables: Shared across ALL members, used for Admin statistics
     static double TotalRevenue =0.0;
     static int TotalViewBorrowed=0;
     static int TotalBorrows=0;
@@ -21,12 +23,14 @@ public class Member{
     int getnumViewBorrowed(){
          return numViewBorrowed;
     }
-
+      // Constructor to initialize a new member with ID, name, and current borrowed count
        Member(int id, String name,int borrowedCount){
            this.id = id;
            this.name = name;
            this.borrowedCount = borrowedCount;
        }
+
+    // Checks if the member can borrow based on the 5-book limit
        boolean canBorrow(){
         if(borrowedCount <5){
                          return true;
@@ -36,7 +40,7 @@ public class Member{
        }
       }
 
-
+// Checks if the member has books to return (count > 0)
       boolean canReturn(){
         if(borrowedCount == 0){
             System.out.println("Error: you don't have any books");
@@ -52,7 +56,7 @@ public class Member{
 
        
       }
-
+        // Simulates borrowing a book and updates counts and session fees
        boolean borrowOne(){
                 if(canBorrow() == false){
                          return false;
@@ -67,6 +71,7 @@ public class Member{
                          return true;
                      }
        }
+    // Simulates returning a book and updates counts
        boolean returnOne(){
            if(canReturn() == true){
                numReturns += 1;
@@ -79,6 +84,7 @@ public class Member{
               return false;
             }        
        }
+    // Resets only the session-specific statistics for the current member
        void reset(){
         System.out.println("Ending session and returning to main menu...");
         numViewBorrowed = 0;
