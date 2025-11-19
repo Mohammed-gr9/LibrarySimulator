@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 //https://github.com/Mohammed-gr9/LibrarySimulator.git
+
+// Name:محمد سفر الغامدي
+// ID: 446104699
+
 public class LibrarySimulator {
     public static void main(String[] args) {
          Scanner kb = new Scanner(System.in);
@@ -185,4 +189,6 @@ public class LibrarySimulator {
         
     } else {
     System.out.println("Invalid choice. Please enter a valid ID, 'A' for Admin, or 'E' to Exit.");}
-        }}}
+        }
+     kb.close(); }
+    }
