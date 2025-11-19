@@ -4,15 +4,16 @@ import java.util.Scanner;
 public class LibrarySimulator {
     public static void main(String[] args) {
          Scanner kb = new Scanner(System.in);
+        // Create initial Member objects as required for the simulation
          Member m1 = new Member(1130987465, "ahmad", 3);
          Member m2 = new Member(1020457668, "mohammed", 0);
          Member m3 = new Member(1103876543, "muhanned", 4);
 
-        
+    // Main program loop to keep the simulator running until Exit (E)
     while (true) {
         String action;
         
-
+     // Display the main menu for member login, admin login, or exit
         System.out.println("===== Welcome to Library Simulator ====");
          System.out.println("Select an account:");
             System.out.printf("%d - %s%n", m1.getId(), m1.getName());
@@ -31,6 +32,7 @@ public class LibrarySimulator {
 
          else if (input.equals("a")){
             while (true) {
+                // Start of Administrator Menu loop
                    System.out.println("\n--- Administrator Menu ---");
                     System.out.println("1. View Total Revenue");
                     System.out.println("2. Most Frequent Operation");
@@ -65,7 +67,7 @@ public class LibrarySimulator {
             
        }
 
-    
+       //// Start of members Menu loop
          else if(input.equals(String.valueOf(m1.getId())) || input.equals(m1.getName().toLowerCase())) {
              while (true) {
                   
